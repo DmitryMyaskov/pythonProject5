@@ -1,0 +1,50 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+{{ title }}
+{% endblock %}
+
+{% block content%}
+  <table class="table">
+      <thead>
+          <tr>
+               <th>id</th>
+               <th>Name</th>
+               <th>Surename</th>
+               <th>@mail</th>
+               <th>Street</th>
+               <th>Suite</th>
+               <th>City</th>
+               <th>Zipcode</th>
+               <th>lat</th>
+               <th>lng</th>
+               <th>Phone</th>
+               <th>Website</th>
+               <th>Compnany</th>
+               <th>CatchPhrase</th>
+               <th>Bs</th>
+          </tr>
+      </thead>
+      <tbody>
+      {%  for pos in user %}
+         <tr scope="row">
+             <th>{{ pos.id }}</th>
+             <th>{{ pos.name }}</th>
+             <th>{{ pos.username }}</th>
+             <th>{{ pos.email }}</th>
+             <th>{{ pos.street }}</th>
+             <th>{{ pos.suite }}</th>
+             <th>{{ pos.city }}</th>
+             <th>{{ pos.zipcode }}</th>
+             <th>{{ pos.lat }}</th>
+             <th>{{ pos.lng }}</th>
+             <th>{{ pos.phone }}</th>
+             <th>{{ pos.website }}</th>
+             <th>{{ pos.compName }}</th>
+             <th>{{ pos.compCatchPhrase }}</th>
+             <th>{{ pos.compBs }}</th>
+         </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+{% endblock%}

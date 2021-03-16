@@ -1,0 +1,26 @@
+{% extends 'main/base.html'%}
+
+{% block title%}
+ {{ title }}
+{% endblock %}
+
+{% block content%}
+  <table class="table">
+      <thead>
+          <tr>
+               <th>Имя пользователя</th>
+               <th>Тема поста</th>
+               <th>Текст поста</th>
+          </tr>
+      </thead>
+      <tbody>
+      {%  for pos in p %}
+         <tr scope="row">
+             <th>{{ pos.name }}</th>
+             <th>{{ pos.title }}</th>
+             <th>{{ pos.body }}</th>
+         </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+{% endblock%}
